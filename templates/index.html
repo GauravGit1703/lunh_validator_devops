@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luhn Number Validator</title>
+</head>
+<body style="background-color:bisque ;" >
+    <h1>Luhn Number Validator</h1>
+    <form method="post">
+        <input type="text" name="number" placeholder="Enter number" required value="{{ number }}">
+        <button type="submit">Validate</button>
+    </form>
+
+    {% if result is not none %}
+        <p>
+            The number <strong>{{ number }}</strong> is
+            <strong style="color: {{ 'green' if result else 'red' }}">
+                {{ 'VALID' if result else 'INVALID' }}
+            </strong>
+            according to the Luhn algorithm.
+        </p>
+    {% endif %}
+</body>
+</html>
